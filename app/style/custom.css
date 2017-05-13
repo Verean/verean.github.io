@@ -19,9 +19,9 @@
 .nav-item .nav-link.active {
 	color: #FFFFFF !important;
 } 
-/*.nav-item:hover .nav-link {
-    color: #666666 !important;
-}*/
+.nav-item .nav-link:hover {
+    color: #FFFFFF !important;
+}
 /*.form-signin {
   max-width: 330px;
   padding: 15px;
