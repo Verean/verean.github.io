@@ -12,7 +12,7 @@
 <body>
 <!-- Navigation -->
     <nav class="navbar fixed-bottom">
-        <ul class="nav justify-content-center nav-fill" role="tablist">
+        <ul class="nav justify-content-between nav-fill" role="tablist">
             <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle="tab" data-target="#home"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
             </li>
@@ -52,11 +52,83 @@
         </div>
     </div>
 <!-- Tab panes -->
-    <div class="tab-content">
-        <div class="tab-pane active" id="home" role="tabpanel">Home...</div>
-        <div class="tab-pane" id="lobby" role="tabpanel">Lobby...</div>
-        <div class="tab-pane fade" id="game" role="tabpanel">Game...</div>
-        <div class="tab-pane" id="chat" role="tabpanel">Chat...</div>
+    <div class="tab-content fill">
+    <!-- Home -->
+        <div class="tab-pane" id="home" role="tabpanel">
+            Home...
+        </div>
+    <!-- Lobby -->
+        <div style="min-height: 100%;" class="tab-pane" id="lobby" role="tabpanel">
+            <table class="table table-bordered table-sm">
+                <thead class="thead-default">
+                    <tr>
+                        <th colspan="2" class="text-center">Lobby</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button type="button" class="btn btn-outline-success">Join</button></td>
+                        <td>1/7</td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn btn-outline-success">Join</button></td>
+                        <td>5/7</td>
+                    </tr>
+                    <tr>
+                        <td><button type="button" class="btn btn-outline-success">Join</button></td>
+                        <td class="text-right">8/9</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm align-bottom">
+                <thead class="thead-default">
+                    <tr>
+                        <th colspan="2" class="text-center">Online Players</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Test</td>
+                    </tr>
+                    <tr>
+                        <td>Test</td>
+                    </tr>   
+                    <tr>
+                        <td>Test</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    <!-- Game -->
+        <div class="tab-pane fade" id="game" role="tabpanel">
+            Game...
+        </div>
+    <!-- Chat -->
+        <div style="min-height: 100%;" class="tab-pane active" id="chat" role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs justify-content-between" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#globalchat" role="tab">Global</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#gamechat" role="tab">Game</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#consolechat" role="tab">Console</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#settingschat" role="tab">Settings</a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane active" id="globalchat" role="tabpanel">Global...</div>
+              <div class="tab-pane" id="gamechat" role="tabpanel">Game...</div>
+              <div class="tab-pane" id="consolechat" role="tabpanel">Console...</div>
+              <div class="tab-pane" id="settingschat" role="tabpanel">Settings...</div>
+            </div>
+        </div>
+    <!-- Profile -->
         <div class="tab-pane" id="profile" role="tabpanel">
             <div class="container">
                 <span id="console"></span>

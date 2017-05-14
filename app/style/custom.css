@@ -19,6 +19,11 @@ body {
     padding:0;
     overflow-y: auto;
 }
+.fill { 
+    min-height: 100%;
+    height: 100%;
+    padding-bottom: 55px;
+}
 
 .modal-dialog {
   min-height: calc(100vh - 60px);
@@ -37,6 +42,10 @@ body {
 .nav-item .nav-link {
     color: #666666 !important;
 }
+/* change the link color */
+.nav-tabs .nav-item .nav-link.active {
+	color: #000000 !important;
+} 
 /* change the color of active or hovered links */
 .nav-item .nav-link.active {
 	color: #FFFFFF !important;
