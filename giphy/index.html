@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Giphy Test application built around specified guildines.">
+  <meta name="author" content="Verean Patel">
+  <title>Giphy Test App</title>
+  <!-- Bootstrap CDN | Required for CSS styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Override default BG color | #FFF -->
+  <style type="text/css">
+    body {background-color: #9E9E9E !important; padding-top: 70px;}
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container navbar-text">
+    <h4>Giphy Live Search</h4>
+  </div>
+  </nav>
+  <div id="app" class="container-fluid">
+    <br>
+    <!-- Viewing Box | Only shown when GIF selected -->
+    <div class="well col-md-6" id="app-viewer">
+      <div v-show="results.length > 0 && !current_gif" class="alert alert-warning text-center" role="alert">
+        <h4>Select a GIF to view details</h4>
+      </div>
+      <img :src="current_gif" v-show="current_gif" class="center-block" width="100%">
+      <br>
+      <!-- GIF Details | Only valid info visible -->
+      <ul class="list-group">
+        <li v-show="source" class="list-group-item"><strong>Source URL:</strong> {{ source }}</li>
+        <li v-show="rating" class="list-group-item"><strong>Content Rating:</strong> <span class="text-uppercase">{{ rating }}</span></li>
+        <li v-show="date" class="list-group-item"><strong>Import Date:</strong> {{ date }}</li>
+      </ul>
+    </div>
+    <!-- Search | Updates live w/ change -->
+    <div class="col-md-6" v-bind:class="liveSearch">
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon" id="sizing-addon1">Search</span>
+        <input type="text" class="form-control" placeholder="Keywords" aria-describedby="sizing-addon1" v-model="query">
+      </div>
+      <br>
+      <!-- Search Results | Only visible w/ valid keyword -->
+      <div v-show="results.length > 0" class="panel panel-default text-center">
+        <div class="panel-heading ">Results</div>
+        <div class="panel-body" width="100%">
+          <img :src="gif.images.fixed_height_small.url" class="image-card" v-for="gif in results" v-on:click="viewGIF(gif)">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Vue CDN, Axios CDN, app.js | Required to function -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+  <script src="assets/js/app.js"></script>
+  </body>
+</html>
