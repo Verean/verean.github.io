@@ -1,5 +1,3 @@
-# Verean 
-
 ## About
 
 Perosnal website
